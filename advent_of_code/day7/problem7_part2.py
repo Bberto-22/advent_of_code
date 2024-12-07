@@ -30,9 +30,6 @@ def is_valid(combinaciones, resultado, numeros):
             elif operador == "||":
                 resultado_calculado = int(str(resultado_calculado) + str(siguiente_numero))
                 
-            if resultado < resultado_calculado:
-                break
-                
             if resultado == resultado_calculado:
                 return True
     return False
