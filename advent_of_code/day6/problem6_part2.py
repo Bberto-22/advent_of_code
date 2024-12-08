@@ -37,23 +37,25 @@ def is_stuck(fila_guardia, columna_guardia, direccion, matriz):
     visitados = set()
     movimientos = {"^": (-1, 0), ">": (0, 1), "v": (1, 0), "<": (0, -1)}
 
-    while 0 <= fila_guardia < filas and 0 <= columna_guardia < columnas:
-        if (fila_guardia, columna_guardia, direccion) in visitados:
+    while 1 <= fila_guardia < filas and 1 <= columna_guardia < columnas:
+        #if (fila_guardia, columna_guardia, direccion) in visitados:
             #print_matriz(matriz)
-            return True
+            #return True
 
-        visitados.add((fila_guardia, columna_guardia, direccion))
+        #visitados.add((fila_guardia, columna_guardia, direccion))
 
         dx, dy = movimientos[direccion]
         nueva_fila, nueva_columna = fila_guardia + dx, columna_guardia + dy
 
         if not (0 <= nueva_fila < filas and 0 <= nueva_columna < columnas):
             break
+        if matriz[nueva_fila][nueva_columna] == direccion:
+            return True
 
         if matriz[nueva_fila][nueva_columna] == "#":
             direccion = {"^": ">", ">": "v", "v": "<", "<": "^"}[direccion]
         else:
-            #matriz[nueva_fila][nueva_columna] = direccion
+            matriz[nueva_fila][nueva_columna] = direccion
             fila_guardia, columna_guardia = nueva_fila, nueva_columna
 
     return False

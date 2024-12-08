@@ -18,7 +18,7 @@ def generar_operadores(n):
 
 def is_valid(combinaciones, resultado, numeros):
     for combinacion in combinaciones:
-        resultado_calculado = numeros[0]  # Empieza con el primer número
+        resultado_calculado = numeros[0]
         for i in range(len(combinacion)):
             operador = combinacion[i]
             siguiente_numero = numeros[i + 1]
