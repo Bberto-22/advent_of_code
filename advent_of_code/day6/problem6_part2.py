@@ -26,7 +26,7 @@ def posicion_inicial(matriz):
             if matriz[i][j] == ">" or matriz[i][j] == "<" or matriz[i][j] == "^" or matriz[i][j] == "v":
                 return i, j, matriz[i][j]
           
-resultado = 1
+resultado = 0
 fila_guardia, columna_guardia, direccion = posicion_inicial(matriz)   
 def print_matriz(matriz):
     for fila in matriz:
